@@ -7,11 +7,22 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
+# Copy environment variables for build
+COPY .env* ./
+
 # Install all dependencies (including devDependencies for build)
 RUN npm ci
 
 # Copy source code
 COPY . .
+
+# Set build-time environment variables
+ARG VITE_SUPABASE_URL
+ARG VITE_SUPABASE_ANON_KEY  
+ARG VITE_WEBHOOK_URL
+ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL
+ENV VITE_SUPABASE_ANON_KEY=$VITE_SUPABASE_ANON_KEY
+ENV VITE_WEBHOOK_URL=$VITE_WEBHOOK_URL
 
 # Build the application
 RUN npm run build

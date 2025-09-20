@@ -1,0 +1,27 @@
+{
+  "services": [
+    {
+      "name": "dash-workana",
+      "type": "app",
+      "source": {
+        "type": "github",
+        "owner": "FresHHerB",
+        "repo": "dash-workana",
+        "branch": "main"
+      },
+      "build": {
+        "type": "dockerfile",
+        "dockerfile": "Dockerfile"
+      },
+      "deploy": {
+        "port": 80,
+        "replicas": 1
+      },
+      "domains": [
+        {
+          "name": "dash-workana.example.com"
+        }
+      ]
+    }
+  ]
+}

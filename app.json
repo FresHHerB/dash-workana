@@ -1,0 +1,19 @@
+{
+  "name": "dash-workana",
+  "description": "Dashboard Workana Frontend",
+  "website": "https://github.com/FresHHerB/dash-workana",
+  "keywords": ["react", "typescript", "vite", "dashboard"],
+  "stack": "container",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [],
+  "env": {},
+  "buildpacks": [],
+  "scripts": {
+    "postdeploy": "echo 'Deployment successful'"
+  }
+}

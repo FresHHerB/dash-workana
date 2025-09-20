@@ -40,6 +40,7 @@ export const parseRelativeTime = (relativeTime: string): Date => {
 };
 
 export const formatBudget = (budget: string): string => {
+  if (!budget) return '';
   return budget
     .replace('USD', '$')
     .replace('Less than', '<')
